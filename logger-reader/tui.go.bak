@@ -1,0 +1,70 @@
+package main
+
+import (
+	"fmt"
+	"os"
+
+	tea "github.com/charmbracelet/bubbletea"
+)
+
+type model struct {
+	cursor   int
+	showFull bool
+}
+
+func (m model) Init() tea.Cmd {
+	return nil
+}
+
+func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
+	switch msg := msg.(type) {
+	case tea.KeyMsg:
+		switch msg.String() {
+		case "ctrl+c", "q":
+			return m, tea.Quit
+
+		case "up", "k":
+			if m.cursor > 0 {
+				m.cursor--
+			}
+
+		case "down", "j":
+			if m.cursor < len(allRawLogs)-1 {
+				m.cursor++
+			}
+
+		case "enter":
+			m.showFull = !m.showFull
+		}
+	}
+	return m, nil
+}
+
+func (m model) View() string {
+	s := "Use ↑/↓ to navigate, Enter to view full log, q to quit\n\n"
+	for i, summary := range allSummaries {
+		cursor := "  "
+		if i == m.cursor {
+			cursor = "👉"
+		}
+		if m.showFull && i == m.cursor {
+			s += fmt.Sprintf("%s %s\n", cursor, allRawLogs[i])
+		} else {
+			s += fmt.Sprintf("%s %s\n", cursor, summary)
+		}
+	}
+	return s
+}
+
+func runTUI() {
+	if len(allRawLogs) == 0 {
+		fmt.Println("No logs to display.")
+		return
+	}
+
+	p := tea.NewProgram(model{})
+	if err := p.Start(); err != nil {
+		fmt.Println("TUI error:", err)
+		os.Exit(1)
+	}
+}
