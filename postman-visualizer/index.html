@@ -1,0 +1,422 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<style>
+:root{--bg:#fff;--text:#111827;--gutter:#f3f4f6;--border:#e5e7eb;
+--key:#1f2937;--str:#008000;--num:#d14;--bool:#aa0;--null:#a0a;--punct:#9ca3af}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--text)}
+body{font:13px/1.45 ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}
+
+/* toolbar */
+.toolbar{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid var(--border);padding:8px 12px;display:flex;gap:8px}
+.btn{padding:5px 10px;border:1px solid var(--border);background:#fff;border-radius:8px;cursor:pointer}
+.btn:hover{background:#f9fafb}
+
+/* layout */
+.editor{display:grid;grid-template-columns:auto 1fr}
+.gutter{background:var(--gutter);border-right:1px solid var(--border);padding:6px 8px}
+.code{padding:6px 12px}
+.ln{color:#9ca3af;text-align:right;padding-right:8px;line-height:1.45}
+
+/* lines & tokens */
+.line{white-space:pre;margin:0;position:relative;padding-left:0px;line-height:1.45}
+.key{color:var(--key)} .string{color:var(--str)} .number{color:var(--num)}
+.boolean{color:var(--bool)} .null{color:var(--null)} .punct{color:var(--punct)}
+
+/* folding */
+details{display:inline;margin:0;padding:0}
+summary{list-style:none;cursor:pointer;position:relative;padding-left:0;margin:0;display:inline}
+summary::marker,summary::-webkit-details-marker{display:none}
+summary:before{content:"▸";position:absolute;left:-16px;top:0;transform:translateY(-2px);color:#6b7280;transition:.12s ease}
+details[open] > summary:before{transform:translateY(1px) rotate(90deg)}
+details > summary .closed-only { display: inline; }
+details[open] > summary .closed-only { display: none; }
+details > summary .open-only { display: none; }
+details[open] > summary .open-only { display: inline; }
+
+</style></head><body>
+  <div class="toolbar">
+    <button class="btn" id="expandAll">Expand all</button>
+    <button class="btn" id="collapseAll">Collapse all</button>
+    <button class="btn" id="expand1">Expand level 1</button>
+    <button class="btn" id="expand2">Expand level 2</button>
+  </div>
+  <div id="viewer"></div>
+  <script type="application/json" id="__data__">
+            {
+                "error": false,
+                "code": 200,
+                "message": "Success",
+                "data": [
+                    {
+                        "TaskID": "691537",
+                        "type": "Cellular",
+                        "status": "Rejected",
+                        "step": "NullStep",
+                        "createdByID": "0",
+                        "lastApprovedByID": "0",
+                        "lastRejectedByID": "0",
+                        "data": {
+                            "accountName": "",
+                            "additionalRemark": "",
+                            "amount": 165156,
+                            "batchId": "",
+                            "billAmount": 165156,
+                            "billingId": "0811567848001",
+                            "companyID": "123461740",
+                            "corporateName": "",
+                            "currency": "IDR",
+                            "currentSchedule": "",
+                            "customerName": "",
+                            "debitAccount": {
+                                "accountAlias": "",
+                                "accountName": "BADXXXXXXXXXXXXXXSTK",
+                                "accountNumber": "020601000091308",
+                                "accountType": "CA",
+                                "currency": "IDR"
+                            },
+                            "emails": [],
+                            "fee": 2800,
+                            "isDraft": false,
+                            "isSavedHistory": false,
+                            "name": "Bapak ADE TRI PUTRA",
+                            "parentId": "",
+                            "paymentMethod": "",
+                            "refNumber": "",
+                            "savedBilling": {
+                                "alias": "",
+                                "billingId": "0811567848001",
+                                "companyId": "123461740",
+                                "name": "Bapak ADE TRI PUTRA",
+                                "userId": "7001742"
+                            },
+                            "scheduleType": "Immediate",
+                            "taskID": "",
+                            "transactionId": "CEL691537",
+                            "type": "Cellular",
+                            "userID": "7001742"
+                        },
+                        "comment": "",
+                        "featureID": "0",
+                        "childs": [],
+                        "isParentActive": false,
+                        "reasons": "",
+                        "lastApprovedByName": "",
+                        "lastRejectedByName": "",
+                        "updatedByID": "0",
+                        "updatedByName": "",
+                        "createdByName": "",
+                        "workflowDoc": {
+                            "workflow": {
+                                "createdAt": {
+                                    "nanos": 294304770,
+                                    "seconds": 1754874280
+                                },
+                                "createdBy": {
+                                    "userID": 7001742,
+                                    "username": "CU_QA_M"
+                                },
+                                "currentRoleIDs": [2623],
+                                "currentStep": "checker",
+                                "header": {
+                                    "companyID": 123461740,
+                                    "companyName": "ROSSOTESTING",
+                                    "currencyID": 1,
+                                    "currencyName": "IDR",
+                                    "maker": {
+                                        "userID": 7001742,
+                                        "userName": "CU_QA_M"
+                                    },
+                                    "productID": 721,
+                                    "productName": "Cellular",
+                                    "transactionalNumber": 165156,
+                                    "uaID": 1003286,
+                                    "workflowID": 1940
+                                },
+                                "records": {
+                                    "bottomRange": 1,
+                                    "flows": [
+                                        {
+                                            "appCurrPriority": 1,
+                                            "approver": {
+                                                "Requirement": 1,
+                                                "participants": [
+                                                    {
+                                                        "priorityNumber": 1,
+                                                        "roleID": 2622,
+                                                        "step": "signer"
+                                                    }
+                                                ]
+                                            },
+                                            "listRoles": [2623, 2622],
+                                            "releaser": {},
+                                            "verCurrPriority": 1,
+                                            "verifier": {
+                                                "Requirement": 1,
+                                                "participants": [
+                                                    {
+                                                        "priorityNumber": 1,
+                                                        "roleID": 2623,
+                                                        "step": "checker"
+                                                    }
+                                                ]
+                                            },
+                                            "workflowLogicID": 5014
+                                        }
+                                    ],
+                                    "lastUpdatedAt": {
+                                        "nanos": 345297006,
+                                        "seconds": 1754874280
+                                    },
+                                    "topRange": 10000000
+                                }
+                            }
+                        },
+                        "companyID": "123461740",
+                        "holdingID": "0",
+                        "refNumber": "",
+                        "createdAt": null,
+                        "updatedAt": null,
+                        "deletedAt": null
+                    },
+                    {
+                        "TaskID": "691536",
+                        "type": "Cellular",
+                        "status": "Rejected",
+                        "step": "NullStep",
+                        "createdByID": "0",
+                        "lastApprovedByID": "0",
+                        "lastRejectedByID": "0",
+                        "data": {
+                            "accountName": "",
+                            "additionalRemark": "",
+                            "amount": 165156,
+                            "batchId": "",
+                            "billAmount": 165156,
+                            "billingId": "0811567848001",
+                            "companyID": "123461740",
+                            "corporateName": "",
+                            "currency": "IDR",
+                            "currentSchedule": "",
+                            "customerName": "",
+                            "debitAccount": {
+                                "accountAlias": "",
+                                "accountName": "BADXXXXXXXXXXXXXXSTK",
+                                "accountNumber": "020601000091308",
+                                "accountType": "CA",
+                                "currency": "IDR"
+                            },
+                            "emails": [],
+                            "fee": 2800,
+                            "isDraft": false,
+                            "isSavedHistory": false,
+                            "name": "Bapak ADE TRI PUTRA",
+                            "parentId": "",
+                            "paymentMethod": "",
+                            "refNumber": "",
+                            "savedBilling": {
+                                "alias": "",
+                                "billingId": "0811567848001",
+                                "companyId": "123461740",
+                                "name": "Bapak ADE TRI PUTRA",
+                                "userId": "7001742"
+                            },
+                            "scheduleType": "Immediate",
+                            "taskID": "",
+                            "transactionId": "CEL691536",
+                            "type": "Cellular",
+                            "userID": "7001742"
+                        },
+                        "comment": "",
+                        "featureID": "0",
+                        "childs": [],
+                        "isParentActive": false,
+                        "reasons": "",
+                        "lastApprovedByName": "",
+                        "lastRejectedByName": "",
+                        "updatedByID": "0",
+                        "updatedByName": "",
+                        "createdByName": "",
+                        "workflowDoc": {
+                            "workflow": {
+                                "createdAt": {
+                                    "nanos": 162914372,
+                                    "seconds": 1754873955
+                                },
+                                "createdBy": {
+                                    "userID": 7001742,
+                                    "username": "CU_QA_M"
+                                },
+                                "currentRoleIDs": [2623],
+                                "currentStep": "checker",
+                                "header": {
+                                    "companyID": 123461740,
+                                    "companyName": "ROSSOTESTING",
+                                    "currencyID": 1,
+                                    "currencyName": "IDR",
+                                    "maker": {
+                                        "userID": 7001742,
+                                        "userName": "CU_QA_M"
+                                    },
+                                    "productID": 721,
+                                    "productName": "Cellular",
+                                    "transactionalNumber": 165156,
+                                    "uaID": 1003286,
+                                    "workflowID": 1940
+                                },
+                                "records": {
+                                    "bottomRange": 1,
+                                    "flows": [
+                                        {
+                                            "appCurrPriority": 1,
+                                            "approver": {
+                                                "Requirement": 1,
+                                                "participants": [
+                                                    {
+                                                        "priorityNumber": 1,
+                                                        "roleID": 2622,
+                                                        "step": "signer"
+                                                    }
+                                                ]
+                                            },
+                                            "listRoles": [2623, 2622],
+                                            "releaser": {},
+                                            "verCurrPriority": 1,
+                                            "verifier": {
+                                                "Requirement": 1,
+                                                "participants": [
+                                                    {
+                                                        "priorityNumber": 1,
+                                                        "roleID": 2623,
+                                                        "step": "checker"
+                                                    }
+                                                ]
+                                            },
+                                            "workflowLogicID": 5014
+                                        }
+                                    ],
+                                    "lastUpdatedAt": {
+                                        "nanos": 565117782,
+                                        "seconds": 1754873955
+                                    },
+                                    "topRange": 10000000
+                                }
+                            }
+                        },
+                        "companyID": "123461740",
+                        "holdingID": "0",
+                        "refNumber": "",
+                        "createdAt": null,
+                        "updatedAt": null,
+                        "deletedAt": null
+                    }
+                ],
+                "pagination": {
+                    "limit": 10,
+                    "page": 1,
+                    "totalRows": "2",
+                    "totalPages": 1
+                }
+            }
+        </script>
+<script>
+(function(){
+  const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const S=(c,t)=>'<span class="'+c+'">'+t+'</span>';
+  const prim=v=>v===null?S('null','null')
+    :typeof v==='string'?S('string','"'+esc(v)+'"')
+    :typeof v==='number'?S('number',String(v))
+    :typeof v==='boolean'?S('boolean',String(v))
+    :S('string','"'+esc(String(v))+'"');
+  const line=html=>'<div class="line">'+html+'</div>';
+
+  function renderEntry(key, value, indent, isLast, depth){
+    const lines=[];
+    const comma=isLast?'':S('punct',',');
+    const keyHtml=key!==undefined ? S('key','"'+esc(key)+'"')+S('punct',': ') : '';
+
+    // primitive
+    if (value===null || typeof value!=='object'){
+      lines.push(line(indent + keyHtml + prim(value) + comma));
+      return lines;
+    }
+
+    const isArr=Array.isArray(value);
+    const open=isArr?'[':'{', close=isArr?']':'}';
+
+    // --- ALWAYS show {…} / […] when collapsed, INCLUDING array elements (no key) ---
+    const badgeHtml = (isArr ? '[' : '{') + '…' + (isArr ? ']' : '}');
+
+    const head = '<details data-depth="'+depth+'"><summary>'
+               + keyHtml
+               + '<span class="closed-only">'+S('punct', badgeHtml)+comma+'</span>'
+               + '<span class="open-only">'+S('punct', open)+'</span>'
+               + '</summary><div class="body">';
+    lines.push(line(indent + head));
+
+    const next=indent+'  ';
+    if (isArr){
+      for (let i=0;i<value.length;i++){
+        lines.push(...renderEntry(undefined, value[i], next, i===value.length-1, depth+1));
+      }
+    } else {
+      const ks=Object.keys(value);
+      for (let i=0;i<ks.length;i++){
+        const k=ks[i];
+        lines.push(...renderEntry(k, value[k], next, i===ks.length-1, depth+1));
+      }
+    }
+
+    lines.push(line(indent + S('punct', close) + '<span class="open-only">'+comma+'</span></div></details>'));
+    return lines;
+  }
+
+  function mount(data){
+    const parts=[];
+    if (data && typeof data==='object' && !Array.isArray(data)){
+      parts.push(line(S('punct','{')));
+      const ks=Object.keys(data);
+      for (let i=0;i<ks.length;i++){
+        parts.push(...renderEntry(ks[i], data[ks[i]], '  ', i===ks.length-1, 1));
+      }
+      parts.push(line(S('punct','}')));
+    } else if (Array.isArray(data)){
+      parts.push(line(S('punct','[')));
+      for (let i=0;i<data.length;i++){
+        parts.push(...renderEntry(undefined, data[i], '  ', i===data.length-1, 1));
+      }
+      parts.push(line(S('punct',']')));
+    } else {
+      parts.push(line(prim(data)));
+    }
+
+    const viewer=document.getElementById('viewer');
+    viewer.innerHTML='<div class="editor"><div class="gutter" id="gut"></div><div class="code" id="code">'+parts.join('')+'</div></div>';
+
+    const refresh=()=>{
+      const vis=[...viewer.querySelectorAll('.line')].filter(el=>el.offsetParent!==null);
+      document.getElementById('gut').innerHTML=vis.map((_,i)=>'<div class="ln">'+(i+1)+'</div>').join('');
+    };
+    refresh();
+    viewer.addEventListener('toggle', e=>{ if(e.target.tagName==='DETAILS') refresh(); }, true);
+
+    const setAll=(open,maxDepth)=>{
+      viewer.querySelectorAll('details').forEach(d=>{
+        const depth=+d.getAttribute('data-depth')||0;
+        if(typeof maxDepth==='number' && depth>maxDepth) return;
+        d.open=!!open;
+      });
+      refresh();
+    };
+    expandAll.onclick=()=>setAll(true);
+    collapseAll.onclick=()=>setAll(false);
+    expand1.onclick=()=>{ setAll(false); setAll(true,1); };
+    expand2.onclick=()=>{ setAll(false); setAll(true,2); };
+  }
+
+  try{
+    const raw=document.getElementById('__data__').textContent||'{}';
+    mount(JSON.parse(raw));
+  }catch(e){
+    document.getElementById('viewer').innerHTML='<div style="color:#b91c1c;padding:12px">Gagal parsing JSON: '+e+'</div>';
+  }
+})();
+</script></body></html>

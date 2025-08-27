@@ -1,0 +1,194 @@
+{
+  "error": false,
+  "code": 200,
+  "message": "Success",
+  "data": {
+    "task": {
+      "TaskID": "691274",
+      "type": "PLN",
+      "status": "Approved",
+      "step": "Releaser",
+      "createdByID": "5015456",
+      "lastApprovedByID": "5015746",
+      "lastRejectedByID": "0",
+      "data": "{\"fee\": 1000, \"flag\": \"\", \"name\": \"USLXXXXXXXXXXXXXXXXXXXXXX\", \"stan\": \"PE04310100\", \"amount\": 20000, \"emails\": [], \"taskId\": \"691274\", \"userId\": \"\", \"isDraft\": false, \"currency\": \"IDR\", \"billingId\": \"141921034719\", \"companyId\": \"\", \"terminalId\": \"QCASH\", \"billingType\": \"PLN Prepaid\", \"maxKwhLimit\": \"\", \"meterNumber\": \"11592136714\", \"serviceUnit\": \"14120\", \"totalRepeat\": \"\", \"debitAccount\": {\"currency\": \"IDR\", \"accountName\": \"DAMXXXXXXXTYA\", \"accountType\": \"SA\", \"accountAlias\": \"\", \"accountNumber\": \"001201183098505\"}, \"savedBilling\": {\"name\": \"USLXXXXXXXXXXXXXXXXXXXXXX\", \"alias\": \"\", \"userId\": \"5015456\", \"billingId\": \"141921034719\", \"companyId\": \"5005402\"}, \"scheduleType\": \"Immediate\", \"subscriberId\": \"141921034719\", \"unsoldToken1\": \"5000000\", \"unsoldToken2\": \"0\", \"isUnsoldToken\": false, \"transactionId\": \"PLN691274\", \"billReference1\": \"77970C92B72A44C582286193CE53A3AB\", \"isSavedHistory\": false, \"currentSchedule\": \"\", \"distributionCode\": \"\", \"serviceUnitPhone\": \"\", \"powerPurchaseUnsold\": \"\", \"powerConsumingCategory\": \"23000\", \"subscriberSegmentation\": \"B2\"}",
+      "comment": "",
+      "featureID": "0",
+      "childs": [],
+      "isParentActive": false,
+      "reasons": "",
+      "lastApprovedByName": "ARES",
+      "lastRejectedByName": "",
+      "updatedByID": "5015746",
+      "updatedByName": "ARES",
+      "createdByName": "HERA",
+      "workflowDoc": "{\"nextStep\": \"complete\", \"workflow\": {\"header\": {\"uaID\": 1001274, \"maker\": {\"userID\": 5015456, \"userName\": \"HERA\"}, \"companyID\": 5005402, \"productID\": 239, \"currencyID\": 1, \"workflowID\": 1840, \"companyName\": \"IKEA\", \"productName\": \"PLN\", \"currencyName\": \"IDR\", \"transactionalNumber\": 20000}, \"records\": {\"flows\": [{\"approver\": {\"Requirement\": 1, \"participants\": [{\"step\": \"signer\", \"roleID\": 1168, \"userID\": 5015466, \"userName\": \"APOLLO\", \"approvedAt\": {\"nanos\": 577561800, \"seconds\": 1754887219}, \"priorityNumber\": 1}], \"approvedCount\": 1}, \"releaser\": {\"Requirement\": 1, \"participants\": [{\"step\": \"releaser\", \"roleID\": 824, \"userID\": 5015746, \"userName\": \"ARES\", \"approvedAt\": {\"nanos\": 433121985, \"seconds\": 1754887403}, \"priorityNumber\": 1}], \"approvedCount\": 1}, \"verifier\": {\"Requirement\": 1, \"participants\": [{\"step\": \"checker\", \"roleID\": 1167, \"userID\": 5015465, \"userName\": \"AFRODIT\", \"approvedAt\": {\"nanos\": 161451690, \"seconds\": 1754552076}, \"priorityNumber\": 1}], \"approvedCount\": 1}, \"listRoles\": [1167, 1168, 824], \"appCurrPriority\": 1, \"approvedUserIDs\": [5015465, 5015466, 5015746], \"relCurrPriority\": 1, \"verCurrPriority\": 1, \"workflowLogicID\": 806495}], \"topRange\": 2000000, \"bottomRange\": 1, \"lastUpdatedAt\": {\"nanos\": 433744032, \"seconds\": 1754887403}}, \"createdAt\": {\"nanos\": 227112116, \"seconds\": 1754541078}, \"createdBy\": {\"userID\": 5015456, \"username\": \"HERA\"}, \"currentStep\": \"complete\", \"participantUserIDs\": [5015465, 5015466, 5015746]}, \"nextStatus\": \"approved\"}",
+      "companyID": "5005402",
+      "holdingID": "0",
+      "refNumber": "",
+      "createdAt": "2025-08-07T04:31:18.695920Z",
+      "updatedAt": "2025-08-11T04:43:23.439723Z",
+      "deletedAt": null,
+      "approvedAt": "2025-08-11T04:43:23.439723Z",
+      "rejectedAt": null
+    },
+    "company": null,
+    "data": {
+      "billingType": "PLN Prepaid",
+      "transactionId": "PLN691274",
+      "taskID": "691274",
+      "transactionStatus": "Success",
+      "name": "USLD~!@#$^*}?-&+UAT#TEST2",
+      "billingId": "141921034719",
+      "debitAccount": {
+        "accountName": "DAMXXXXXXXTYA",
+        "accountNumber": "001201183098505",
+        "currency": "IDR",
+        "accountType": ""
+      },
+      "currency": "IDR",
+      "amount": 20000,
+      "fee": 1000,
+      "totalAmount": 21000,
+      "scheduleType": "Immediate",
+      "emails": [],
+      "monthYear": "",
+      "savedBilling": {
+        "billingId": "141921034719",
+        "userId": "",
+        "name": "",
+        "alias": "",
+        "companyId": "5005402"
+      },
+      "parentId": "",
+      "errorMessage": "",
+      "batchId": "",
+      "workflowDoc": "",
+      "status": "Approved",
+      "companyId": "5005402",
+      "id": "691274",
+      "taskData": "",
+      "billData": {
+        "totalRepeat": "",
+        "powerPurchaseUnsold": "",
+        "unsoldToken1": "5000000",
+        "unsoldToken2": "0",
+        "transactionId": "PLN691274",
+        "terminalId": "QCASH",
+        "stan": "PE04310100",
+        "meterNumber": "11592136714",
+        "subscriberId": "141921034719",
+        "flag": "",
+        "subscriberSegmentation": "B2",
+        "powerConsumingCategory": "23000",
+        "distributionCode": "",
+        "serviceUnit": "14120",
+        "serviceUnitPhone": "",
+        "maxKwhLimit": "",
+        "caReceiptReferenceNumber": ""
+      },
+      "amountBefore": "",
+      "token": "89399887709492219606",
+      "meterNumber": "11592136714",
+      "custNumber": "141921034719",
+      "custName": "USLD~!@#$^*}?-&+UAT#TEST2",
+      "subscriberSegment": "B2",
+      "powerConsumingCategory": "23000",
+      "billingReference": "2002148A4878B7B3E148E3B72F2EE299",
+      "meterai": "0",
+      "rpppn": "0",
+      "rppbjt": "1819",
+      "installment": "0",
+      "powerPurchase": "",
+      "purchasedKwhUnit": "12.6",
+      "rpStroom": "18181",
+      "currentSchedule": null,
+      "createdDate": "2025-08-07T04:31:18.695920Z",
+      "approvedDate": "2025-08-11T04:43:23.439723Z",
+      "createdAt": "2025-08-11T04:43:23.574094Z",
+      "updatedAt": "2025-08-11T04:43:25.665513Z"
+    },
+    "workflow": {
+      "workflow": {
+        "header": {
+          "productID": "239",
+          "productName": "PLN",
+          "currencyID": "1",
+          "currencyName": "IDR",
+          "companyID": "5005402",
+          "companyName": "IKEA",
+          "transactionalNumber": "20000",
+          "workflowID": "1840"
+        },
+        "records": {
+          "lastUpdatedAt": "2025-08-11T04:43:23.433744032Z",
+          "topRange": "2000000",
+          "bottomRange": "1",
+          "flows": [
+            {
+              "workflowLogicID": "806495",
+              "verifier": {
+                "approvedCount": 1,
+                "rejectedCount": 0,
+                "Requirement": 1,
+                "participants": [
+                  {
+                    "userID": "5015465",
+                    "userName": "AFRODIT",
+                    "roleID": "1167",
+                    "isReject": false,
+                    "approvedAt": "2025-08-07T07:34:36.161451690Z",
+                    "step": "checker"
+                  }
+                ]
+              },
+              "approver": {
+                "approvedCount": 1,
+                "rejectedCount": 0,
+                "Requirement": 1,
+                "participants": [
+                  {
+                    "userID": "5015466",
+                    "userName": "APOLLO",
+                    "roleID": "1168",
+                    "isReject": false,
+                    "approvedAt": "2025-08-11T04:40:19.577561800Z",
+                    "step": "signer"
+                  }
+                ]
+              },
+              "releaser": {
+                "approvedCount": 1,
+                "rejectedCount": 0,
+                "Requirement": 1,
+                "participants": [
+                  {
+                    "userID": "5015746",
+                    "userName": "ARES",
+                    "roleID": "824",
+                    "isReject": false,
+                    "approvedAt": "2025-08-11T04:43:23.433121985Z",
+                    "step": "releaser"
+                  }
+                ]
+              },
+              "isRejected": false,
+              "completedAt": null
+            }
+          ]
+        },
+        "createdBy": {
+          "userID": "5015456",
+          "username": "HERA"
+        },
+        "createdAt": "2025-08-07T04:31:18.227112116Z",
+        "isDefault": false,
+        "isTransactional": false,
+        "currentRoleIDs": [],
+        "currentStep": "complete"
+      },
+      "nextStatus": "approved",
+      "nextStep": "complete"
+    }
+  }
+}
