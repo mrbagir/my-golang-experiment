@@ -1,0 +1,25 @@
+apps:
+  - name: MyApp
+    settings:
+      - name: Setting1
+        active: true
+        value: Value1
+      - name: Setting2
+        active: false
+        value: Value2
+    terminal:
+      maxLines: 100
+      autoScroll: true
+    hide: false
+  - name: MySecondApp
+    settings:
+      - name: SettingA
+        active: true
+        value: ValueA
+      - name: SettingB
+        active: false
+        value: ValueB
+    terminal:
+      maxLines: 50
+      autoScroll: false
+    hide: false
