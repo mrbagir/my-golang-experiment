@@ -5,10 +5,9 @@ go 1.24.1
 require (
 	github.com/joho/godotenv v1.5.1
 	gopkg.in/ini.v1 v1.67.0
+	k8s.io/api v0.33.1
 	k8s.io/apimachinery v0.33.1
 )
-
-require k8s.io/api v0.33.1 // indirect
 
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
